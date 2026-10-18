@@ -353,16 +353,13 @@ class YacineStreamScraper:
 
     def _generate_m3u(self, streams):
         ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-
+        
         github_repo = os.getenv("GITHUB_REPOSITORY", "")
         github_branch = os.getenv("GITHUB_REF_NAME", "main")
-
-        if github_repo:
-            base_logo_url = (
-                f"https://raw.githubusercontent.com/{github_repo}/{github_branch}/"
-            )
-        else:
-            base_logo_url = ""
+        base_logo_url = f"https://raw.githubusercontent.com/{github_repo}/{github_branch}/" if github_repo else ""
+        
+        # তোমার ক্লাউডফ্লাওয়ার প্রক্সি লিংক এখানে বসাবে
+        CF_WORKER_PROXY = "https://master.acc-mail-sani.workers.dev/?url="
 
         lines = [
             "#EXTM3U",
@@ -374,44 +371,27 @@ class YacineStreamScraper:
 
         for s in streams:
             title = s["title"].replace('"', "'")
-            url = s["url"]
+            raw_url = s["url"]
             logo = s.get("logo", "")
-
+            
             if logo:
-                if logo.startswith("http://") or logo.startswith("https://"):
-                    full_logo_url = logo
-                elif base_logo_url:
-                    full_logo_url = f"{base_logo_url}{logo}".replace("\\", "/")
-                else:
-                    full_logo_url = logo
+                full_logo_url = logo if logo.startswith("http") else f"{base_logo_url}{logo}".replace("\\", "/")
             else:
                 full_logo_url = ""
 
             ref = s["headers"].get("referer", s["referer"])
             ua = s["headers"].get("user-agent", "Mozilla/5.0")
-            origin = s["headers"].get("origin", "")
+            
+            # প্রক্সির মাধ্যমে লিংক রুট করা যাতে টিভির প্লেয়ারে কোনো হেডার মিস না হয়
+            proxied_url = f"{CF_WORKER_PROXY}{urllib.parse.quote(raw_url)}&referer={urllib.parse.quote(ref)}"
 
-            lines.append(
-                f'#EXTINF:-1 tvg-logo="{full_logo_url}" group-title="Yacine TV Live",{title}'
-            )
-            lines.append(f"#EXTVLCOPT:http-referrer={ref}")
-            lines.append(f"#EXTVLCOPT:http-user-agent={ua}")
-            if origin:
-                lines.append(f"#EXTVLCOPT:http-origin={origin}")
-
-            kodi_props = [f"Referer={ref}", f"User-Agent={ua}"]
-            if origin:
-                kodi_props.append(f"Origin={origin}")
-            lines.append(
-                "#KODIPROP:inputstream.adaptive.stream_headers=" + "&".join(kodi_props)
-            )
-
-            lines.append(url)
+            lines.append(f'#EXTINF:-1 tvg-logo="{full_logo_url}" group-title="Yacine TV Live",{title}')
+            lines.append(proxied_url)
             lines.append("")
 
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
-        print(f"\n[+] Success! Playlist saved to {OUTPUT_FILE}")
+        print(f"\n[+] Success! Playlist saved with Cloudflare Proxy integration.")
 
 
 if __name__ == "__main__":
