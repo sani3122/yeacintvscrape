@@ -1,0 +1,238 @@
+#EXTM3U
+# generated: 2026-10-18 01:26 UTC
+# source: https://yacinetv.website/
+# streams: 34
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 1)
+#EXTVLCOPT:http-referrer=https://a13.kora-plus.li/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://a13.kora-plus.li/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 2)
+#EXTVLCOPT:http-referrer=https://a13.kora-plus.li/frame.php?ch=alwan1&p=12&token=ff466174-c42f-4f9a-a416-8bfc563d1b6b&kt=1792286679
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://a13.kora-plus.li/frame.php?ch=alwan1&p=12&token=ff466174-c42f-4f9a-a416-8bfc563d1b6b&kt=1792286679&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+https://a13.kora-plus.li/live/alwan1.m3u8?token=Qr1wTot34_FPimj9xnqrlN89jUI&exp=1792290279
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 3)
+#EXTVLCOPT:http-referrer=https://a11.kora-plus.li/frame.php?ch=alwan1&p=12&token=ff466174-c42f-4f9a-a416-8bfc563d1b6b&kt=1792286690
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://a11.kora-plus.li/frame.php?ch=alwan1&p=12&token=ff466174-c42f-4f9a-a416-8bfc563d1b6b&kt=1792286690&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+https://a11.kora-plus.li/live/alwan1.m3u8?token=LmyGEZoAxy7QfWPG9G7oHNLBQmI&exp=1792290291
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 4)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9.m3u8?s=l8zzM3leJ0464-QHdyuOMA&e=1792308301
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 5)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9-524870370.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 6)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9-533636370.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 7)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9-534386340.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 8)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9-535136400.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_425_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",الدوري الأمريكي مباشر Atlanta United FC 0 - 3 إنتر ميامي شاهد على ياسين تيفي (Server 9)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/9pbbu39owf6b9-535886370.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 1)
+#EXTVLCOPT:http-referrer=https://gsports.lat/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://gsports.lat/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 2)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr.m3u8?s=LB_VlIOc9ioMiuSzYaRwTQ&e=1792308373
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 3)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr-526545450.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 4)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr-532494450.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 5)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr-532824480.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 6)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr-533430450.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 7)
+#EXTVLCOPT:http-referrer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://8c107f61ee15effaf86698bf89d533bf.dyncrutch.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/ulgk1vzsw8aqr-534180510.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 8)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy.m3u8?s=7gaTKzurd9AOuA0QBRDSNw&e=1792308377
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 9)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8348525730.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 10)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8353031310.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 11)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8357536890.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 12)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8362042560.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 13)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8366548140.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 14)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8371053720.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 15)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8375559300.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 16)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8380064970.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 17)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8384570550.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 18)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8389076130.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 19)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8393581710.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 20)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8398087290.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 21)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8402592960.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 22)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8407098540.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 23)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8411604120.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 24)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8416109700.ts
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 25)
+#EXTVLCOPT:http-referrer=https://tossequip.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://tossequip.net
+#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://tossequip.net/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&Origin=https://tossequip.net
+https://m71t4o.awqb0f40a9yo.net:8443/hls/pq11l3p9wvhy-8420615370.ts
