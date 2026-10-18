@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Yacine TV Live Stream M3U Scraper with Smart Stream Validation (Chromium Edition)
-- Scrapes live matches from https://yacinetv.website/
-- Filters only LIVE matches
-- Validates every captured stream URL via aiohttp before adding to playlist (Only Working Links)
-- Automatically cleans old banner logos and outputs raw GitHub image URLs
+Xoilacz Live Stream M3U Scraper (Targeted Teams & Auto-Validation Edition)
+- Scrapes live matches from target sports site
+- Filters ONLY preferred football teams (Inter Miami, Man Utd, Man City, Como, Barca, Real, Liverpool, Arsenal)
+- Captures multiple server streams (BRADY, FELIX, etc.) and validates them
+- Automatically cleans old logos and outputs absolute GitHub raw URLs
 """
 
 import asyncio
@@ -20,50 +20,44 @@ from PIL import Image, ImageDraw, ImageFont
 import pycountry
 from playwright.async_api import async_playwright
 
-TARGET_URL = "https://sportsurges.pro/Fullschedule/"
+# Target Website from your input
+TARGET_URL = "https://columbiaenvironmentallaw.org/"  # Or your specific sports domain
 OUTPUT_FILE = "live_playlist.m3u"
 LOGOS_DIR = "logos"
-WAIT_PLAYER = 5  # Seconds to wait per stream server tab
+WAIT_PLAYER = 5  # Seconds to wait per server tab
 
+# STRICT STREAM RE: Only capture master/variant playlists, ignore video chunks (.ts)
 STREAM_RE = re.compile(
-    r"(\.m3u8(\?|$)|/hls/|manifest\.mpd|/chunklist|/index\.m3u)", re.IGNORECASE
+    r"(playlist\.m3u8|index\.m3u8|mono\.m3u8|\.m3u8(\?|$))", re.IGNORECASE
 )
 
-TEAM_NAME_MAP = {
-    "rep tcheque": "Czech Republic",
-    "republique tcheque": "Czech Republic",
-    "pays bas": "Netherlands",
-    "angleterre": "England",
-    "espagne": "Spain",
-    "allemagne": "Germany",
-    "italie": "Italy",
-    "etats unis": "United States",
-    "arabie saoudite": "Saudi Arabia",
-    "coree du sud": "South Korea",
-}
+# Whitelist of teams you want to scrape
+TARGET_TEAMS = [
+    "inter miami",
+    "manchester united",
+    "man. united",
+    "manchester city",
+    "man. city",
+    "como",
+    "fc barcelona",
+    "barcelona",
+    "real madrid",
+    "liverpool",
+    "arsenal",
+]
 
 
 def normalize_team_name(name: str) -> str:
-    clean = name.strip()
-    lower = clean.lower()
-    return TEAM_NAME_MAP.get(lower, clean)
+    return name.strip().lower()
 
 
-async def load_image_safely(session: aiohttp.ClientSession, url: str) -> Image.Image:
-    if not url:
-        return None
-    try:
-        async with session.get(url, timeout=8) as resp:
-            if resp.status == 200:
-                content_type = resp.headers.get("Content-Type", "").lower()
-                if "svg" in content_type or url.endswith(".svg"):
-                    return None
-                bytes_data = await resp.read()
-                img = Image.open(io.BytesIO(bytes_data)).convert("RGBA")
-                return img
-    except Exception:
-        pass
-    return None
+def is_target_match(title: str) -> bool:
+    """Checks if the match title contains any of the preferred target teams."""
+    lower_title = title.lower()
+    for team in TARGET_TEAMS:
+        if team in lower_title:
+            return True
+    return False
 
 
 def get_fitted_font(
@@ -98,8 +92,8 @@ async def generate_vs_banner(
     os.makedirs(LOGOS_DIR, exist_ok=True)
     output_path = os.path.join(LOGOS_DIR, f"{match_slug}.png")
 
-    t1_name = (normalize_team_name(team1) or "TEAM 1").upper()
-    t2_name = (normalize_team_name(team2) or "TEAM 2").upper()
+    t1_name = (team1 or "TEAM 1").upper()
+    t2_name = (team2 or "TEAM 2").upper()
 
     try:
         canvas = Image.new("RGBA", (700, 300), (18, 20, 29, 255))
@@ -138,8 +132,10 @@ async def generate_vs_banner(
         return ""
 
 
-async def validate_stream_link(session: aiohttp.ClientSession, stream_info: dict) -> bool:
-    """Tests if the captured stream URL is truly alive and working using aiohttp."""
+async def validate_stream_link(
+    session: aiohttp.ClientSession, stream_info: dict
+) -> bool:
+    """Validates if the captured m3u8 stream is truly active and working."""
     url = stream_info["url"]
     headers = {
         "User-Agent": stream_info["headers"].get("user-agent", "Mozilla/5.0"),
@@ -150,18 +146,21 @@ async def validate_stream_link(session: aiohttp.ClientSession, stream_info: dict
         headers["Origin"] = origin
 
     try:
-        async with session.get(url, headers=headers, timeout=aiohttp.ClientTimeout(total=6)) as resp:
+        async with session.get(
+            url, headers=headers, timeout=aiohttp.ClientTimeout(total=6)
+        ) as resp:
             if resp.status == 200:
                 text = await resp.text()
-                # Check if it contains valid HLS / M3U8 tags or media segments
-                if "#EXTM3U" in text or ".ts" in text or "m3u8" in text or len(text.strip()) > 10:
+                if "#EXTM3U" in text and (
+                    "#EXT-X-STREAM-INF" in text or "m3u8" in text or ".ts" in text
+                ):
                     return True
     except Exception:
         pass
     return False
 
 
-class YacineStreamScraper:
+class TargetedStreamScraper:
 
     def __init__(self, target_url=TARGET_URL):
         self.target_url = target_url
@@ -176,7 +175,7 @@ class YacineStreamScraper:
     async def run(self):
         self._clean_logos_folder()
 
-        print(f"[*] Initializing Chromium Browser for Yacine TV: {self.target_url}")
+        print(f"[*] Initializing Chromium Browser for target: {self.target_url}")
         async with async_playwright() as p:
             browser = await p.chromium.launch(
                 headless=True,
@@ -192,9 +191,9 @@ class YacineStreamScraper:
             )
             page = await context.new_page()
 
-            print("\n[Tier 1] Scanning LIVE Matches from Yacine TV...")
-            match_links = await self._tier_1_find_live_matches(page)
-            print(f"    -> Found {len(match_links)} live match(es).")
+            print("\n[Tier 1] Scanning Live Matches & Filtering Target Teams...")
+            match_links = await self._tier_1_find_target_matches(page)
+            print(f"    -> Found {len(match_links)} matching target live match(es).")
 
             async with aiohttp.ClientSession() as http_session:
                 raw_streams = []
@@ -217,8 +216,9 @@ class YacineStreamScraper:
 
                 await browser.close()
 
-                # --- SMART STREAM VALIDATION FILTER ---
-                print(f"\n[*] Validating {len(raw_streams)} captured stream link(s)...")
+                print(
+                    f"\n[*] Validating {len(raw_streams)} captured stream link(s)..."
+                )
                 for s in raw_streams:
                     is_working = await validate_stream_link(http_session, s)
                     if is_working:
@@ -232,7 +232,8 @@ class YacineStreamScraper:
             )
             self._generate_m3u(self.captured_streams)
 
-    async def _tier_1_find_live_matches(self, page):
+    async def _tier_1_find_target_matches(self, page):
+        """Scrapes match cards and filters only those matching our target team list."""
         try:
             await page.goto(self.target_url, wait_until="commit", timeout=30000)
             await asyncio.sleep(3)
@@ -240,22 +241,29 @@ class YacineStreamScraper:
             print(f"[!] Target page load failed: {e}")
             return []
 
-        matches = await page.evaluate(r"""
-            () => {
+        matches = await page.evaluate(
+            r"""
+            (targetTeams) => {
                 const results = [];
                 const seen = new Set();
-                const watchLinks = Array.from(document.querySelectorAll('a[href*="match"], a[href*="watch"], a'));
+                const matchElements = Array.from(document.querySelectorAll('a[href*="match"], a[href*="watch"], div[class*="match"], a'));
 
-                watchLinks.forEach(a => {
-                    const href = a.href;
+                matchElements.forEach(el => {
+                    const href = el.href || (el.querySelector('a') ? el.querySelector('a').href : '');
                     if (!href || seen.has(href)) return;
 
-                    const card = a.closest('div') || a.parentElement;
-                    const cardText = card ? card.innerText : '';
+                    const card = el.closest('div, tr, li') || el.parentElement;
+                    const cardText = card ? card.innerText.trim().replace(/\n/g, ' ') : '';
                     
-                    if (cardText.includes('مباشر') || cardText.includes('شاهد') || href.includes('match') || href.includes('watch')) {
-                        let title = a.innerText.trim().replace(/\n/g, ' ');
-                        if (title.length < 3 || title.includes('تحميل') || title.includes('APK')) return;
+                    if (cardText.length < 3) return;
+
+                    // Check if any target team is in this match card text
+                    const lowerText = cardText.toLowerCase();
+                    const isMatched = targetTeams.some(team => lowerText.includes(team));
+
+                    if (isMatched && (cardText.includes('VS') || cardText.includes('-'))) {
+                        let title = cardText.includes('VS') ? cardText.split(/VS/i).join('VS') : cardText;
+                        if (title.length > 60) title = "Football Match";
 
                         let slug = href.split('/').filter(Boolean).pop() || 'match';
                         slug = slug.replace(/[^a-zA-Z0-9-_]/g, '_');
@@ -267,7 +275,9 @@ class YacineStreamScraper:
 
                 return results;
             }
-        """)
+        """,
+            TARGET_TEAMS,
+        )
         return matches
 
     async def _process_match_page(
@@ -294,7 +304,7 @@ class YacineStreamScraper:
                     "headers": headers,
                     "referer": match_url,
                 })
-                print(f"        -> [CAPTURED] {url[:70]}")
+                print(f"        -> [CAPTURED STREAM] {url[:70]}")
             await route.continue_()
 
         await page.route("**/*", route_handler)
@@ -303,16 +313,17 @@ class YacineStreamScraper:
             await page.goto(match_url, wait_until="domcontentloaded", timeout=30000)
             await asyncio.sleep(2)
 
+            # Click server tabs like BRADY, FELIX, FULL HD, etc.
             stream_tabs = await page.evaluate("""
                 () => {
-                    const IGNORED = ['HOME', 'DOWNLOAD', 'APK', 'BACK', 'CLOSE', 'SEARCH'];
-                    const buttons = Array.from(document.querySelectorAll('button, div[class*="server"], div[class*="tab"], a[class*="btn"]'));
+                    const IGNORED = ['HOME', 'DOWNLOAD', 'APK', 'BACK', 'CLOSE', 'SEARCH', 'TELEGRAM', 'FACEBOOK'];
+                    const buttons = Array.from(document.querySelectorAll('button, div[class*="server"], div[class*="tab"], a[class*="btn"], span[class*="btn"]'));
                     const tabs = [];
                     
                     buttons.forEach((el, idx) => {
                         const txt = el.innerText.trim();
                         const upper = txt.toUpperCase();
-                        if (!txt || txt.length > 20 || IGNORED.some(w => upper.includes(w))) return;
+                        if (!txt || txt.length > 25 || IGNORED.some(w => upper.includes(w))) return;
                         tabs.push({ index: idx, name: txt });
                     });
                     return tabs;
@@ -327,7 +338,7 @@ class YacineStreamScraper:
                         await page.evaluate(
                             """
                             (idx) => {
-                                const buttons = Array.from(document.querySelectorAll('button, div[class*="server"], div[class*="tab"], a[class*="btn"]'));
+                                const buttons = Array.from(document.querySelectorAll('button, div[class*="server"], div[class*="tab"], a[class*="btn"], span[class*="btn"]'));
                                 if (buttons[idx]) buttons[idx].click();
                             }
                             """,
@@ -353,13 +364,16 @@ class YacineStreamScraper:
 
     def _generate_m3u(self, streams):
         ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-        
+
         github_repo = os.getenv("GITHUB_REPOSITORY", "")
         github_branch = os.getenv("GITHUB_REF_NAME", "main")
-        base_logo_url = f"https://raw.githubusercontent.com/{github_repo}/{github_branch}/" if github_repo else ""
-        
-        # তোমার ক্লাউডফ্লাওয়ার প্রক্সি লিংক এখানে বসাবে
-        CF_WORKER_PROXY = "https://master.acc-mail-sani.workers.dev/?url="
+
+        if github_repo:
+            base_logo_url = (
+                f"https://raw.githubusercontent.com/{github_repo}/{github_branch}/"
+            )
+        else:
+            base_logo_url = ""
 
         lines = [
             "#EXTM3U",
@@ -371,30 +385,47 @@ class YacineStreamScraper:
 
         for s in streams:
             title = s["title"].replace('"', "'")
-            raw_url = s["url"]
+            url = s["url"]
             logo = s.get("logo", "")
-            
+
             if logo:
-                full_logo_url = logo if logo.startswith("http") else f"{base_logo_url}{logo}".replace("\\", "/")
+                if logo.startswith("http://") or logo.startswith("https://"):
+                    full_logo_url = logo
+                elif base_logo_url:
+                    full_logo_url = f"{base_logo_url}{logo}".replace("\\", "/")
+                else:
+                    full_logo_url = logo
             else:
                 full_logo_url = ""
 
             ref = s["headers"].get("referer", s["referer"])
             ua = s["headers"].get("user-agent", "Mozilla/5.0")
-            
-            # প্রক্সির মাধ্যমে লিংক রুট করা যাতে টিভির প্লেয়ারে কোনো হেডার মিস না হয়
-            proxied_url = f"{CF_WORKER_PROXY}{urllib.parse.quote(raw_url)}&referer={urllib.parse.quote(ref)}"
+            origin = s["headers"].get("origin", "")
 
-            lines.append(f'#EXTINF:-1 tvg-logo="{full_logo_url}" group-title="Yacine TV Live",{title}')
-            lines.append(proxied_url)
+            lines.append(
+                f'#EXTINF:-1 tvg-logo="{full_logo_url}" group-title="Targeted Football Matches",{title}'
+            )
+            lines.append(f"#EXTVLCOPT:http-referrer={ref}")
+            lines.append(f"#EXTVLCOPT:http-user-agent={ua}")
+            if origin:
+                lines.append(f"#EXTVLCOPT:http-origin={origin}")
+
+            kodi_props = [f"Referer={ref}", f"User-Agent={ua}"]
+            if origin:
+                kodi_props.append(f"Origin={origin}")
+            lines.append(
+                "#KODIPROP:inputstream.adaptive.stream_headers=" + "&".join(kodi_props)
+            )
+
+            lines.append(url)
             lines.append("")
 
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
-        print(f"\n[+] Success! Playlist saved with Cloudflare Proxy integration.")
+        print(f"\n[+] Success! Playlist saved to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
-    scraper = YacineStreamScraper()
+    scraper = TargetedStreamScraper()
     asyncio.run(scraper.run())
-                
+            
