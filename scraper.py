@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Yacine TV Live Stream M3U Scraper (Chromium Edition)
+Yacine TV Live Stream M3U Scraper with Smart Stream Validation (Chromium Edition)
 - Scrapes live matches from https://yacinetv.website/
-- Filters only LIVE matches (marked with 'مباشر' or watch buttons)
-- Automatically cleans old banner logos before every run
-- Outputs raw GitHub image URLs for tvg-logo compatibility
+- Filters only LIVE matches
+- Validates every captured stream URL via aiohttp before adding to playlist (Only Working Links)
+- Automatically cleans old banner logos and outputs raw GitHub image URLs
 """
 
 import asyncio
@@ -95,7 +95,6 @@ async def generate_vs_banner(
     team2: str,
     match_slug: str,
 ) -> str:
-    """Generates a clean VS banner card for the match."""
     os.makedirs(LOGOS_DIR, exist_ok=True)
     output_path = os.path.join(LOGOS_DIR, f"{match_slug}.png")
 
@@ -139,6 +138,29 @@ async def generate_vs_banner(
         return ""
 
 
+async def validate_stream_link(session: aiohttp.ClientSession, stream_info: dict) -> bool:
+    """Tests if the captured stream URL is truly alive and working using aiohttp."""
+    url = stream_info["url"]
+    headers = {
+        "User-Agent": stream_info["headers"].get("user-agent", "Mozilla/5.0"),
+        "Referer": stream_info["headers"].get("referer", stream_info["referer"]),
+    }
+    origin = stream_info["headers"].get("origin")
+    if origin:
+        headers["Origin"] = origin
+
+    try:
+        async with session.get(url, headers=headers, timeout=aiohttp.ClientTimeout(total=6)) as resp:
+            if resp.status == 200:
+                text = await resp.text()
+                # Check if it contains valid HLS / M3U8 tags or media segments
+                if "#EXTM3U" in text or ".ts" in text or "m3u8" in text or len(text.strip()) > 10:
+                    return True
+    except Exception:
+        pass
+    return False
+
+
 class YacineStreamScraper:
 
     def __init__(self, target_url=TARGET_URL):
@@ -175,10 +197,10 @@ class YacineStreamScraper:
             print(f"    -> Found {len(match_links)} live match(es).")
 
             async with aiohttp.ClientSession() as http_session:
+                raw_streams = []
                 for title, url, slug in match_links:
                     print(f"\n[Tier 2] Processing Match: {title}")
 
-                    # Team names splitting for banner
                     parts = title.split(" VS ")
                     t1 = parts[0] if len(parts) > 0 else "Team 1"
                     t2 = parts[1] if len(parts) > 1 else "Team 2"
@@ -189,19 +211,28 @@ class YacineStreamScraper:
                         match_streams = await self._process_match_page(
                             browser, url, title, logo_path
                         )
-                        self.captured_streams.extend(match_streams)
+                        raw_streams.extend(match_streams)
                     except Exception as e:
                         print(f"    [!] Error processing match {title}: {str(e)}")
 
-            await browser.close()
+                await browser.close()
+
+                # --- SMART STREAM VALIDATION FILTER ---
+                print(f"\n[*] Validating {len(raw_streams)} captured stream link(s)...")
+                for s in raw_streams:
+                    is_working = await validate_stream_link(http_session, s)
+                    if is_working:
+                        print(f"    [✔ WORKING] {s['url'][:70]}")
+                        self.captured_streams.append(s)
+                    else:
+                        print(f"    [✘ DEAD/INVALID] {s['url'][:70]}")
 
             print(
-                f"\n[*] Generating M3U Playlist ({len(self.captured_streams)} streams captured)..."
+                f"\n[*] Generating M3U Playlist ({len(self.captured_streams)} WORKING streams saved)..."
             )
             self._generate_m3u(self.captured_streams)
 
     async def _tier_1_find_live_matches(self, page):
-        """Scrapes only LIVE matches containing watch buttons or مباشر tag."""
         try:
             await page.goto(self.target_url, wait_until="commit", timeout=30000)
             await asyncio.sleep(3)
@@ -213,24 +244,19 @@ class YacineStreamScraper:
             () => {
                 const results = [];
                 const seen = new Set();
-                
-                // Find all match cards or containers with watch links / buttons
                 const watchLinks = Array.from(document.querySelectorAll('a[href*="match"], a[href*="watch"], a'));
 
                 watchLinks.forEach(a => {
                     const href = a.href;
                     if (!href || seen.has(href)) return;
 
-                    // Check if it's a live match card (contains watch button or مباشر text in parent/card)
                     const card = a.closest('div') || a.parentElement;
                     const cardText = card ? card.innerText : '';
                     
                     if (cardText.includes('مباشر') || cardText.includes('شاهد') || href.includes('match') || href.includes('watch')) {
-                        // Extract team names if possible from text or URL
                         let title = a.innerText.trim().replace(/\n/g, ' ');
                         if (title.length < 3 || title.includes('تحميل') || title.includes('APK')) return;
 
-                        // Create clean slug
                         let slug = href.split('/').filter(Boolean).pop() || 'match';
                         slug = slug.replace(/[^a-zA-Z0-9-_]/g, '_');
 
@@ -268,7 +294,7 @@ class YacineStreamScraper:
                     "headers": headers,
                     "referer": match_url,
                 })
-                print(f"        -> [HIT] Captured Stream: {url[:80]}")
+                print(f"        -> [CAPTURED] {url[:70]}")
             await route.continue_()
 
         await page.route("**/*", route_handler)
@@ -277,7 +303,6 @@ class YacineStreamScraper:
             await page.goto(match_url, wait_until="domcontentloaded", timeout=30000)
             await asyncio.sleep(2)
 
-            # Find streaming server tabs/buttons (like Live 1, Live 2, ALW 1)
             stream_tabs = await page.evaluate("""
                 () => {
                     const IGNORED = ['HOME', 'DOWNLOAD', 'APK', 'BACK', 'CLOSE', 'SEARCH'];
@@ -392,4 +417,4 @@ class YacineStreamScraper:
 if __name__ == "__main__":
     scraper = YacineStreamScraper()
     asyncio.run(scraper.run())
-          
+                
