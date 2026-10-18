@@ -1,13 +1,4 @@
 #EXTM3U
-# generated: 2026-10-18 03:00 UTC
+# generated: 2026-10-18 06:06 UTC
 # source: https://yacinetv.website/
-# streams: 3
-
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 1)
-https://master.acc-mail-sani.workers.dev/?url=https%3A//cdn.jsdelivr.net/npm/%40swarmcloud/hls/p2p-engine.min.js&referer=https%3A//gsports.lat/
-
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 2)
-https://master.acc-mail-sani.workers.dev/?url=https%3A//81j8b6.a737cozfwjmm.net%3A8443/hls/ulgk1vzsw8aqr.m3u8%3Fs%3DXqzLmDvmJjbw2HXpcCGhsA%26e%3D1792313941&referer=https%3A//5e9270a83e11c27d434859c578aae92d.dyncrutch.net/
-
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/sani3122/yeacintvscrape/main/logos/kora_html_m_432_lang_en_d_robotiva_online.png" group-title="Yacine TV Live",نزالات يو إف سي مباشر Mike Malott 0 - 0 Joaquin Buckley شاهد على ياسين تيفي (Server 10)
-https://master.acc-mail-sani.workers.dev/?url=https%3A//81j8b6.a737cozfwjmm.net%3A8443/hls/pq11l3p9wvhy.m3u8%3Fs%3DXjUv7ohGvxaJRTl_4l3s3Q%26e%3D1792313946&referer=https%3A//tossequip.net/
+# streams: 0
