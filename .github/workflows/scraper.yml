@@ -1,4 +1,4 @@
-name: Yacine TV Stream Scraper
+name: Targeted Football Stream Scraper
 
 on:
   schedule:
@@ -37,6 +37,6 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add live_playlist.m3u logos/
-          git commit -m "Auto-update Yacine TV playlist and banners [skip ci]" || exit 0
+          git commit -m "Auto-update targeted football playlist and banners [skip ci]" || exit 0
           git push
           
